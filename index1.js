@@ -2,7 +2,9 @@ const request = require('request');
 
 
 
-var req = {
+
+// Get the data from GraphQL server
+const req = {
     url: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
   method: 'POST',
   headers: { "Content-Type": "application/graphql" },
@@ -12,15 +14,10 @@ var req = {
               gtfsId
                 name
                 stoptimesWithoutPatterns {
-    scheduledArrival
     realtimeArrival
     arrivalDelay
-    scheduledDeparture
     realtimeDeparture
     departureDelay
-    realtime
-    realtimeState
-    serviceDay
     headsign
   }
                 desc
@@ -33,8 +30,10 @@ var req = {
 };
 
 
+
+// Turning GraphQL objects into JSON objects
 request(req, function (error, response, body) {
-  if (!error && response.statusCode == 200) {
+  if (!error && response.statusCode == 200) {      // If there are no errors then print the data
     console.log(JSON.stringify(JSON.parse(body), null, 4));
   }
 });
