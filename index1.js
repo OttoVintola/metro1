@@ -1,11 +1,9 @@
 const request = require('request');
 
 
-
-
 // Get the data from GraphQL server
 const req = {
-    url: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
+  url: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
   method: 'POST',
   headers: { "Content-Type": "application/graphql" },
   body: `{
@@ -28,7 +26,6 @@ const req = {
         }
     }`
 };
-
 
 
 // Turning GraphQL objects into JSON objects
