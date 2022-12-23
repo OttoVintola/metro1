@@ -1,5 +1,4 @@
-import tkinter as tk
-from tkinter import *
+
 
 from times import *
 
@@ -25,7 +24,7 @@ desc = Label(window,
 desc.place(x=width/3,y=height/3)
 
 
-# Place times
+# Place timesc
 def setTimes():
    time1 = Label(window, text=times[0]).place(x=330, y=1000/(1+1))
    time2 = Label(window, text=times[1]).place(x=660, y=1000/(1+1))
